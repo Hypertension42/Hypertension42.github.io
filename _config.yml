@@ -1,0 +1,14 @@
+# 网站信息
+title: 我的个人博客
+author: Hypertension42
+email: your-email@example.com
+description: >- # 博客简介，支持多行
+  欢迎来到我的个人博客，这里记录我的学习与生活。
+
+# 主题设置
+remote_theme: jekyll/minima@v2.5.1
+
+# 构建设置
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
