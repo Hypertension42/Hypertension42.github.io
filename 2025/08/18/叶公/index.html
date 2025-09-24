@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>现代叶公好龙：一段代码引发的哲学思考 🐲 | M1yak0 SEKAI</title><meta name="author" content="M1yak0"><meta name="copyright" content="M1yak0"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从一段简单的Python代码出发，探讨叶公好龙的现代含义与深层哲学思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代叶公好龙：一段代码引发的哲学思考 🐲">
+<meta property="og:url" content="https://hypertension42.github.io/2025/08/18/%E5%8F%B6%E5%85%AC/index.html">
+<meta property="og:site_name" content="M1yak0 SEKAI">
+<meta property="og:description" content="从一段简单的Python代码出发，探讨叶公好龙的现代含义与深层哲学思考">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hypertension42.github.io/img/covers/20250909_102118.jpg">
+<meta property="article:published_time" content="2025-08-18T06:30:00.000Z">
+<meta property="article:modified_time" content="2025-09-24T05:11:53.205Z">
+<meta property="article:author" content="M1yak0">
+<meta property="article:tag" content="叶公好龙">
+<meta property="article:tag" content="自我认知">
+<meta property="article:tag" content="哲学思辨">
+<meta property="article:tag" content="程序员哲学">
+<meta property="article:tag" content="现实与理想">
+<meta property="article:tag" content="身份认同">
+<meta property="article:tag" content="深度思考">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hypertension42.github.io/img/covers/20250909_102118.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "现代叶公好龙：一段代码引发的哲学思考 🐲",
+  "url": "https://hypertension42.github.io/2025/08/18/%E5%8F%B6%E5%85%AC/",
+  "image": "https://hypertension42.github.io/img/covers/20250909_102118.jpg",
+  "datePublished": "2025-08-18T06:30:00.000Z",
+  "dateModified": "2025-09-24T05:11:53.205Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "M1yak0",
+      "url": "https://Hypertension42.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hypertension42.github.io/2025/08/18/%E5%8F%B6%E5%85%AC/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '现代叶公好龙：一段代码引发的哲学思考 🐲',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/banners/20250909_102118.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">M1yak0 SEKAI</span></a><a class="nav-page-title" href="/"><span class="site-name">现代叶公好龙：一段代码引发的哲学思考 🐲</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">现代叶公好龙：一段代码引发的哲学思考 🐲</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-18T06:30:00.000Z" title="发表于 2025-08-18 14:30:00">2025-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-24T05:11:53.205Z" title="更新于 2025-09-24 13:11:53">2025-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/">哲学思辨</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/%E4%B8%AA%E4%BA%BA%E5%8F%8D%E6%80%9D/">个人反思</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="🐲-代码中的哲学"><a href="#🐲-代码中的哲学" class="headerlink" title="🐲 代码中的哲学"></a>🐲 代码中的哲学</h2><p>在程序世界里，有时候一段简单的代码能引发最深刻的哲学思考：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">叶公 = 我</span><br><span class="line">我 = 叶公</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>叶公 == 我</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>这看似简单的三行代码，却隐藏着关于<strong>身份认同</strong>、<strong>自我认知</strong>和<strong>现实与理想</strong>的深刻哲学命题。</p>
+<hr>
+<h2 id="🎭-叶公好龙的现代解读"><a href="#🎭-叶公好龙的现代解读" class="headerlink" title="🎭 叶公好龙的现代解读"></a>🎭 叶公好龙的现代解读</h2><h3 id="📖-经典故事回顾"><a href="#📖-经典故事回顾" class="headerlink" title="📖 经典故事回顾"></a>📖 经典故事回顾</h3><p>春秋时期的叶公，表面上酷爱龙的一切：</p>
+<ul>
+<li>🏠 房屋装饰都是龙的图案</li>
+<li>👔 衣服上绣着龙的纹样  </li>
+<li>🎨 收集各种龙的艺术品</li>
+</ul>
+<p>但当真龙出现时，叶公却<strong>吓得魂飞魄散</strong>，仓皇而逃。</p>
+<h3 id="💡-深层含义"><a href="#💡-深层含义" class="headerlink" title="💡 深层含义"></a>💡 深层含义</h3><p>叶公好龙揭示了一个普遍的人性弱点：</p>
+<blockquote>
+<p><strong>我们往往喜欢的只是某种理想化的概念，而非其真实的本质。</strong></p>
+</blockquote>
+<hr>
+<h2 id="🤔-现代”叶公”的自我审视"><a href="#🤔-现代”叶公”的自我审视" class="headerlink" title="🤔 现代”叶公”的自我审视"></a>🤔 现代”叶公”的自我审视</h2><h3 id="🔍-自我诊断"><a href="#🔍-自我诊断" class="headerlink" title="🔍 自我诊断"></a>🔍 自我诊断</h3><p>当我们说出 <code>叶公 = 我</code> 这行代码时，实际上是在进行一次诚实的<strong>自我审视</strong>：</p>
+<h4 id="🎯-我们是否也在："><a href="#🎯-我们是否也在：" class="headerlink" title="🎯 我们是否也在："></a>🎯 我们是否也在：</h4><ul>
+<li>✅ <strong>口头上</strong>追求某些理想</li>
+<li>❌ <strong>行动上</strong>却避开现实</li>
+<li>✅ <strong>想象中</strong>拥抱挑战  </li>
+<li>❌ <strong>实际中</strong>逃避困难</li>
+</ul>
+<h3 id="💻-程序员的”叶公时刻”"><a href="#💻-程序员的”叶公时刻”" class="headerlink" title="💻 程序员的”叶公时刻”"></a>💻 程序员的”叶公时刻”</h3><p>作为程序员，我们可能会遇到这样的”叶公时刻”：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 理想状态</span></span><br><span class="line">dream_job = <span class="string">&quot;Google工程师&quot;</span></span><br><span class="line">my_goal = dream_job</span><br><span class="line"></span><br><span class="line"><span class="comment"># 现实检验</span></span><br><span class="line">real_interview = Google面试()</span><br><span class="line"><span class="keyword">if</span> real_interview.difficulty &gt; my_comfort_zone:</span><br><span class="line">    my_reaction = <span class="string">&quot;逃避&quot;</span>  <span class="comment"># 叶公见真龙</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    my_reaction = <span class="string">&quot;前进&quot;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="🧠-哲学层面的思考"><a href="#🧠-哲学层面的思考" class="headerlink" title="🧠 哲学层面的思考"></a>🧠 哲学层面的思考</h2><h3 id="🎭-三重身份认同"><a href="#🎭-三重身份认同" class="headerlink" title="🎭 三重身份认同"></a>🎭 三重身份认同</h3><p>这段代码实际上涉及三个层面的身份：</p>
+<h4 id="1-🌟-理想中的自我-理想态"><a href="#1-🌟-理想中的自我-理想态" class="headerlink" title="1. 🌟 理想中的自我 (理想态)"></a>1. 🌟 理想中的自我 (理想态)</h4><ul>
+<li>我们希望成为的样子</li>
+<li>我们向往的品质</li>
+<li>我们追求的目标</li>
+</ul>
+<h4 id="2-👤-现实中的自我-现实态"><a href="#2-👤-现实中的自我-现实态" class="headerlink" title="2. 👤 现实中的自我 (现实态)"></a>2. 👤 现实中的自我 (现实态)</h4><ul>
+<li>我们真实的状态</li>
+<li>我们实际的能力</li>
+<li>我们真正的行为</li>
+</ul>
+<h4 id="3-🔄-认知中的自我-认知态"><a href="#3-🔄-认知中的自我-认知态" class="headerlink" title="3. 🔄 认知中的自我 (认知态)"></a>3. 🔄 认知中的自我 (认知态)</h4><ul>
+<li>我们以为的自己</li>
+<li>我们的自我评价</li>
+<li>我们的身份认同</li>
+</ul>
+<h3 id="⚖️-等式的真假"><a href="#⚖️-等式的真假" class="headerlink" title="⚖️ 等式的真假"></a>⚖️ 等式的真假</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>叶公 == 我</span><br><span class="line"><span class="literal">True</span>  <span class="comment"># 还是 False？</span></span><br></pre></td></tr></table></figure>
+<p>这个等式的答案，取决于我们如何定义”叶公”和”我”：</p>
+<ul>
+<li>如果”叶公”代表<strong>理想自我</strong>，”我”代表<strong>现实自我</strong>，那么等式往往为 <code>False</code></li>
+<li>如果”叶公”代表<strong>自我认知</strong>，”我”代表<strong>实际行为</strong>，那么等式也可能为 <code>False</code></li>
+<li>只有当我们诚实面对自己时，等式才可能趋向于 <code>True</code></li>
+</ul>
+<hr>
+<h2 id="🚀-从”叶公”到”真我”的转换"><a href="#🚀-从”叶公”到”真我”的转换" class="headerlink" title="🚀 从”叶公”到”真我”的转换"></a>🚀 从”叶公”到”真我”的转换</h2><h3 id="🔧-代码重构"><a href="#🔧-代码重构" class="headerlink" title="🔧 代码重构"></a>🔧 代码重构</h3><p>要让等式真正成立，我们需要进行”代码重构”：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重构前</span></span><br><span class="line">叶公 = 理想化的概念</span><br><span class="line">我 = 逃避现实的人</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重构后  </span></span><br><span class="line">真我 = 勇于面对现实的人</span><br><span class="line">目标 = 可实现的具体行动</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>真我 == 目标</span><br><span class="line"><span class="literal">True</span>  <span class="comment"># 通过持续努力达成</span></span><br></pre></td></tr></table></figure>
+<h3 id="🎯-实践步骤"><a href="#🎯-实践步骤" class="headerlink" title="🎯 实践步骤"></a>🎯 实践步骤</h3><h4 id="第一步：诚实审视-🔍"><a href="#第一步：诚实审视-🔍" class="headerlink" title="第一步：诚实审视 🔍"></a>第一步：诚实审视 🔍</h4><ul>
+<li>识别自己的”叶公时刻”</li>
+<li>承认理想与现实的差距</li>
+<li>接受不完美的自己</li>
+</ul>
+<h4 id="第二步：渐进改变-📈"><a href="#第二步：渐进改变-📈" class="headerlink" title="第二步：渐进改变 📈"></a>第二步：渐进改变 📈</h4><ul>
+<li>将宏大理想分解为具体行动</li>
+<li>从舒适圈外的小步开始</li>
+<li>建立正反馈循环</li>
+</ul>
+<h4 id="第三步：持续迭代-🔄"><a href="#第三步：持续迭代-🔄" class="headerlink" title="第三步：持续迭代 🔄"></a>第三步：持续迭代 🔄</h4><ul>
+<li>定期检验”等式”的真实性</li>
+<li>调整目标与行动的匹配度</li>
+<li>保持成长的动态平衡</li>
+</ul>
+<hr>
+<h2 id="🎭-结语：拥抱真实的”龙”"><a href="#🎭-结语：拥抱真实的”龙”" class="headerlink" title="🎭 结语：拥抱真实的”龙”"></a>🎭 结语：拥抱真实的”龙”</h2><p>最终，这段看似简单的代码提醒我们：</p>
+<h3 id="💎-核心启示"><a href="#💎-核心启示" class="headerlink" title="💎 核心启示"></a>💎 核心启示</h3><ol>
+<li><strong>🎯 诚实面对</strong>：承认自己的”叶公”属性</li>
+<li><strong>🚀 勇于改变</strong>：从逃避走向拥抱</li>
+<li><strong>🔄 持续迭代</strong>：让理想与现实逐步对齐</li>
+<li><strong>🌟 追求真实</strong>：成为更authenthic的自己</li>
+</ol>
+<h3 id="🐲-最后的思考"><a href="#🐲-最后的思考" class="headerlink" title="🐲 最后的思考"></a>🐲 最后的思考</h3><p>当下次遇到生活中的”真龙”时，我们是否还会像叶公一样逃跑？</p>
+<p>还是能够勇敢地说出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">真实的挑战 = 成长的机会</span><br><span class="line">我 = 迎接挑战的人</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>真实的挑战 == 我能处理的</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p><strong>这，或许才是现代人应有的”叶公好龙”。</strong> 🐲✨</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Hypertension42.github.io">M1yak0</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hypertension42.github.io/2025/08/18/%E5%8F%B6%E5%85%AC/">https://hypertension42.github.io/2025/08/18/%E5%8F%B6%E5%85%AC/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Hypertension42.github.io" target="_blank">M1yak0 SEKAI</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8F%B6%E5%85%AC%E5%A5%BD%E9%BE%99/">叶公好龙</a><a class="post-meta__tags" href="/tags/%E8%87%AA%E6%88%91%E8%AE%A4%E7%9F%A5/">自我认知</a><a class="post-meta__tags" href="/tags/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/">哲学思辨</a><a class="post-meta__tags" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%93%B2%E5%AD%A6/">程序员哲学</a><a class="post-meta__tags" href="/tags/%E7%8E%B0%E5%AE%9E%E4%B8%8E%E7%90%86%E6%83%B3/">现实与理想</a><a class="post-meta__tags" href="/tags/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E5%90%8C/">身份认同</a><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83/">深度思考</a></div><div class="post-share"><div class="social-share" data-image="/img/covers/20250909_102118.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/covers/logic-thinking.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟</div></div><div class="info-2"><div class="info-item-1"> 前言: 这是一个关于思维模式转变的故事，讲述了从依赖直觉到建立严谨逻辑框架的蜕变过程。在ASML荷兰总部的经历，不仅是职业生涯的起点，更是理性思维的启蒙。   🌍 初入ASML：文化冲击的开始20多年前，我硕士刚毕业，进了ASML的算法组，在埃因霍温总部。 我的组长是位荷兰大叔，他一周为ASML工作4天，剩下1天在自己的实验室做研究。此外大叔还是某权威期刊的主编，工作起来基本就是审论文的节奏。 ⚡ 第一次报告：思维方式的碰撞我刚进组第一次作报告，讲话习惯以“I think…” 开头。 结果没说两句就被打断，荷兰叔一副忍无可忍的样子。告诉我：  “你不需要’认为’，你只需要’定义’、’量化’、’推导’和’证明’”  这句话，彻底改变了我的思维方式。  🔥 “逻辑炼狱”：半年的蜕变之路自此之后我便开始了长达半年的”逻辑炼狱”生活。 📊 残酷的会议文化开会随时会被底下人打断，他们总是那么自然而然地问出：  “How do you define?” （你如何定义？） “How do you prove?” （你如何证明？）  不光是我，其实没有一个人能够毫发无损地离开讲台，每次下...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">M1yak0</div><div class="author-info-description">探索代码，思考人生</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">57</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hypertension42"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%B2-%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%93%B2%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">🐲 代码中的哲学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AD-%E5%8F%B6%E5%85%AC%E5%A5%BD%E9%BE%99%E7%9A%84%E7%8E%B0%E4%BB%A3%E8%A7%A3%E8%AF%BB"><span class="toc-number">2.</span> <span class="toc-text">🎭 叶公好龙的现代解读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%96-%E7%BB%8F%E5%85%B8%E6%95%85%E4%BA%8B%E5%9B%9E%E9%A1%BE"><span class="toc-number">2.1.</span> <span class="toc-text">📖 经典故事回顾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%92%A1-%E6%B7%B1%E5%B1%82%E5%90%AB%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">💡 深层含义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%A4%94-%E7%8E%B0%E4%BB%A3%E2%80%9D%E5%8F%B6%E5%85%AC%E2%80%9D%E7%9A%84%E8%87%AA%E6%88%91%E5%AE%A1%E8%A7%86"><span class="toc-number">3.</span> <span class="toc-text">🤔 现代”叶公”的自我审视</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%8D-%E8%87%AA%E6%88%91%E8%AF%8A%E6%96%AD"><span class="toc-number">3.1.</span> <span class="toc-text">🔍 自我诊断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%8E%AF-%E6%88%91%E4%BB%AC%E6%98%AF%E5%90%A6%E4%B9%9F%E5%9C%A8%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">🎯 我们是否也在：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%92%BB-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E2%80%9D%E5%8F%B6%E5%85%AC%E6%97%B6%E5%88%BB%E2%80%9D"><span class="toc-number">3.2.</span> <span class="toc-text">💻 程序员的”叶公时刻”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%A7%A0-%E5%93%B2%E5%AD%A6%E5%B1%82%E9%9D%A2%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">4.</span> <span class="toc-text">🧠 哲学层面的思考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AD-%E4%B8%89%E9%87%8D%E8%BA%AB%E4%BB%BD%E8%AE%A4%E5%90%8C"><span class="toc-number">4.1.</span> <span class="toc-text">🎭 三重身份认同</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%F0%9F%8C%9F-%E7%90%86%E6%83%B3%E4%B8%AD%E7%9A%84%E8%87%AA%E6%88%91-%E7%90%86%E6%83%B3%E6%80%81"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. 🌟 理想中的自我 (理想态)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%F0%9F%91%A4-%E7%8E%B0%E5%AE%9E%E4%B8%AD%E7%9A%84%E8%87%AA%E6%88%91-%E7%8E%B0%E5%AE%9E%E6%80%81"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. 👤 现实中的自我 (现实态)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%F0%9F%94%84-%E8%AE%A4%E7%9F%A5%E4%B8%AD%E7%9A%84%E8%87%AA%E6%88%91-%E8%AE%A4%E7%9F%A5%E6%80%81"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. 🔄 认知中的自我 (认知态)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9A%96%EF%B8%8F-%E7%AD%89%E5%BC%8F%E7%9A%84%E7%9C%9F%E5%81%87"><span class="toc-number">4.2.</span> <span class="toc-text">⚖️ 等式的真假</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%80-%E4%BB%8E%E2%80%9D%E5%8F%B6%E5%85%AC%E2%80%9D%E5%88%B0%E2%80%9D%E7%9C%9F%E6%88%91%E2%80%9D%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">5.</span> <span class="toc-text">🚀 从”叶公”到”真我”的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%A7-%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84"><span class="toc-number">5.1.</span> <span class="toc-text">🔧 代码重构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AF-%E5%AE%9E%E8%B7%B5%E6%AD%A5%E9%AA%A4"><span class="toc-number">5.2.</span> <span class="toc-text">🎯 实践步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E8%AF%9A%E5%AE%9E%E5%AE%A1%E8%A7%86-%F0%9F%94%8D"><span class="toc-number">5.2.1.</span> <span class="toc-text">第一步：诚实审视 🔍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%B8%90%E8%BF%9B%E6%94%B9%E5%8F%98-%F0%9F%93%88"><span class="toc-number">5.2.2.</span> <span class="toc-text">第二步：渐进改变 📈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E6%8C%81%E7%BB%AD%E8%BF%AD%E4%BB%A3-%F0%9F%94%84"><span class="toc-number">5.2.3.</span> <span class="toc-text">第三步：持续迭代 🔄</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AD-%E7%BB%93%E8%AF%AD%EF%BC%9A%E6%8B%A5%E6%8A%B1%E7%9C%9F%E5%AE%9E%E7%9A%84%E2%80%9D%E9%BE%99%E2%80%9D"><span class="toc-number">6.</span> <span class="toc-text">🎭 结语：拥抱真实的”龙”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%92%8E-%E6%A0%B8%E5%BF%83%E5%90%AF%E7%A4%BA"><span class="toc-number">6.1.</span> <span class="toc-text">💎 核心启示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%90%B2-%E6%9C%80%E5%90%8E%E7%9A%84%E6%80%9D%E8%80%83"><span class="toc-number">6.2.</span> <span class="toc-text">🐲 最后的思考</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲"><img src= "/img/loading.gif" data-lazy-src="/img/covers/20250909_102118.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="现代叶公好龙：一段代码引发的哲学思考 🐲"/></a><div class="content"><a class="title" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲">现代叶公好龙：一段代码引发的哲学思考 🐲</a><time datetime="2025-08-18T06:30:00.000Z" title="发表于 2025-08-18 14:30:00">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"><img src= "/img/loading.gif" data-lazy-src="/img/covers/logic-thinking.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"/></a><div class="content"><a class="title" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟">从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟</a><time datetime="2025-08-18T04:16:02.000Z" title="发表于 2025-08-18 12:16:02">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊"><img src= "/img/loading.gif" data-lazy-src="/img/covers/Image_1758594936300.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI时代的信息海洋：一手渠道资源收藏夹 🌊"/></a><div class="content"><a class="title" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊">AI时代的信息海洋：一手渠道资源收藏夹 🌊</a><time datetime="2025-08-17T08:15:00.000Z" title="发表于 2025-08-17 16:15:00">2025-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1757667385547.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"/></a><div class="content"><a class="title" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆">新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆</a><time datetime="2025-08-15T02:30:00.000Z" title="发表于 2025-08-15 10:30:00">2025-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/14/unknow/" title="找到那根串起所有珍珠的线：第一性原理构建人生操作系统 🧠"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1756872902047.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="找到那根串起所有珍珠的线：第一性原理构建人生操作系统 🧠"/></a><div class="content"><a class="title" href="/2025/08/14/unknow/" title="找到那根串起所有珍珠的线：第一性原理构建人生操作系统 🧠">找到那根串起所有珍珠的线：第一性原理构建人生操作系统 🧠</a><time datetime="2025-08-14T07:20:00.000Z" title="发表于 2025-08-14 15:20:00">2025-08-14</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By M1yak0</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
