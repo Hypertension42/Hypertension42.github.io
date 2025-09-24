@@ -1,6 +1,12 @@
 // 自定义JavaScript增强效果
 
+// 公告栏增强系统初始化
+let announcementSystem = null;
+
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // 初始化公告栏增强系统
+    initAnnouncementSystem();
     
     // 1. 鼠标跟随彩色粒子效果
     function createParticle(x, y) {
@@ -243,6 +249,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (siteTitle) {
             siteTitle.classList.add('glow-text');
         }
+        
+        // 初始化公告栏增强系统（延迟初始化以确保主题加载完成）
+        initEnhancedAnnouncement();
     }, 1000);
     
     // 9. 主题切换动画
@@ -293,3 +302,308 @@ document.addEventListener('DOMContentLoaded', function() {
 console.log('%c欢迎来到 M1yak0 SEKAI! 🎉', 'color: #667eea; font-size: 24px; font-weight: bold;');
 console.log('%c如果你看到这个消息，说明你也是一个开发者! 👨‍💻', 'color: #764ba2; font-size: 16px;');
 console.log('%c一起探索代码的魅力吧! ✨', 'color: #f093fb; font-size: 14px;');
+
+// ===== 公告栏增强系统 ===== 
+
+/**
+ * 初始化公告栏增强系统
+ */
+function initAnnouncementSystem() {
+    // 检查是否已加载必要的类
+    if (typeof AnnouncementConfigManager === 'undefined' || 
+        typeof AnnouncementFileManager === 'undefined' || 
+        typeof AnnouncementEnhanced === 'undefined') {
+        console.warn('公告栏增强系统依赖未加载，将使用默认公告栏');
+        return;
+    }
+    
+    console.log('初始化公告栏增强系统...');
+    
+    // 初始化配置管理器
+    const configManager = new AnnouncementConfigManager();
+    
+    // 初始化文件管理器
+    const fileManager = new AnnouncementFileManager();
+    
+    // 全局存储
+    window.announcementConfigManager = configManager;
+    window.announcementFileManager = fileManager;
+}
+
+/**
+ * 初始化增强公告栏
+ */
+function initEnhancedAnnouncement() {
+    try {
+        // 从全局配置加载设置
+        const globalConfig = loadAnnouncementConfig();
+        
+        if (!globalConfig || !globalConfig.enable) {
+            console.log('增强公告栏未启用');
+            return;
+        }
+        
+        console.log('初始化增强公告栏，配置:', globalConfig);
+        
+        // 创建增强公告栏实例
+        if (typeof AnnouncementEnhanced !== 'undefined') {
+            announcementSystem = new AnnouncementEnhanced(globalConfig);
+            
+            // 全局存储
+            window.announcementSystem = announcementSystem;
+            
+            console.log('增强公告栏初始化成功');
+        } else {
+            console.error('增强公告栏类未加载');
+        }
+        
+    } catch (error) {
+        console.error('增强公告栏初始化失败:', error);
+        
+        // 降级处理：显示基本公告栏
+        showFallbackAnnouncement();
+    }
+}
+
+/**
+ * 加载公告栏配置
+ */
+function loadAnnouncementConfig() {
+    try {
+        // 从全局配置加载（模拟从_config.butterfly.yml加载）
+        // 在实际应用中，这些配置会通过Hexo渲染到页面中
+        const config = {
+            enable: true,
+            basic: {
+                title: "🎉 网站公告",
+                show_icon: true,
+                icon: "fas fa-bullhorn",
+                id: "main_announcement"
+            },
+            content_source: {
+                type: "file",  // 从文件加载
+                file_path: "/source/announcements/current.md"
+            },
+            display: {
+                theme: "glassmorphism",
+                position: "sidebar",
+                max_height: "400px",
+                show_date: true,
+                show_author: false,
+                priority: 1
+            },
+            interaction: {
+                closable: true,
+                remember_close: true,
+                close_expires_hours: 24,
+                auto_refresh: false,
+                refresh_interval: 300000,
+                expandable: true
+            },
+            animation: {
+                entrance: "fadeInUp",
+                exit: "fadeOutDown",
+                duration: 500,
+                delay: 1500,  // 延迟1.5秒显示以避免与页面加载冲突
+                hover_effect: true
+            },
+            responsive: {
+                mobile_position: "top",
+                tablet_position: "sidebar",
+                desktop_position: "sidebar"
+            }
+        };
+        
+        // 尝试从本地存储加载用户自定义配置
+        const customConfig = loadCustomConfig();
+        if (customConfig) {
+            return mergeConfig(config, customConfig);
+        }
+        
+        return config;
+        
+    } catch (error) {
+        console.error('加载公告栏配置失败:', error);
+        return null;
+    }
+}
+
+/**
+ * 加载用户自定义配置
+ */
+function loadCustomConfig() {
+    try {
+        const stored = localStorage.getItem('announcement_custom_config');
+        return stored ? JSON.parse(stored) : null;
+    } catch (error) {
+        console.warn('加载用户自定义配置失败:', error);
+        return null;
+    }
+}
+
+/**
+ * 合并配置
+ */
+function mergeConfig(defaultConfig, customConfig) {
+    return deepMerge(defaultConfig, customConfig);
+}
+
+/**
+ * 深度合并对象
+ */
+function deepMerge(target, source) {
+    const result = { ...target };
+    
+    for (const key in source) {
+        if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+            result[key] = deepMerge(target[key] || {}, source[key]);
+        } else {
+            result[key] = source[key];
+        }
+    }
+    
+    return result;
+}
+
+/**
+ * 降级处理：显示基本公告栏
+ */
+function showFallbackAnnouncement() {
+    console.log('使用降级公告栏');
+    
+    // 检查是否已有基本公告栏
+    const existingAnnouncement = document.querySelector('.card-announcement');
+    if (existingAnnouncement) {
+        // 添加一些增强效果
+        enhanceBasicAnnouncement(existingAnnouncement);
+        return;
+    }
+    
+    // 创建简单的公告栏
+    createBasicAnnouncement();
+}
+
+/**
+ * 增强基本公告栏
+ */
+function enhanceBasicAnnouncement(element) {
+    // 添加动画效果
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'all 0.6s ease-out';
+    
+    setTimeout(() => {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+    }, 1500);
+    
+    // 添加悬浮效果
+    element.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-4px) scale(1.01)';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+}
+
+/**
+ * 创建基本公告栏
+ */
+function createBasicAnnouncement() {
+    const container = document.createElement('div');
+    container.className = 'card-widget card-announcement';
+    container.innerHTML = `
+        <div class="card-content">
+            <div class="item-headline">
+                <i class="fas fa-bullhorn"></i>
+                <span>网站公告</span>
+            </div>
+            <div>
+                欢迎来到 M1yak0 SEKAI! 🎉<br>
+                这里是我的个人博客，分享编程技术和生活思考。<br>
+                <a href="https://github.com/Hypertension42" target="_blank">⭐ 关注我的GitHub</a>
+            </div>
+        </div>
+    `;
+    
+    // 插入到侧边栏
+    const sidebar = document.querySelector('#aside-content .sticky_layout') || 
+                   document.querySelector('#aside-content');
+    
+    if (sidebar) {
+        sidebar.appendChild(container);
+        enhanceBasicAnnouncement(container);
+    }
+}
+
+// ===== 公告栏工具函数 ===== 
+
+/**
+ * 刷新公告栏
+ */
+function refreshAnnouncement() {
+    if (announcementSystem && typeof announcementSystem.refresh === 'function') {
+        announcementSystem.refresh();
+    } else {
+        console.log('增强公告栏未初始化，重新加载页面');
+        location.reload();
+    }
+}
+
+/**
+ * 关闭公告栏
+ */
+function closeAnnouncement() {
+    if (announcementSystem && typeof announcementSystem.close === 'function') {
+        announcementSystem.close();
+    } else {
+        // 对基本公告栏的处理
+        const announcement = document.querySelector('.card-announcement');
+        if (announcement) {
+            announcement.style.transition = 'all 0.3s ease-out';
+            announcement.style.opacity = '0';
+            announcement.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                announcement.remove();
+            }, 300);
+        }
+    }
+}
+
+/**
+ * 切换公告栏展开状态
+ */
+function toggleAnnouncementExpand() {
+    if (announcementSystem && typeof announcementSystem.toggleExpand === 'function') {
+        announcementSystem.toggleExpand();
+    }
+}
+
+/**
+ * 获取公告栏统计信息
+ */
+function getAnnouncementStats() {
+    if (window.announcementFileManager) {
+        return window.announcementFileManager.getStats();
+    }
+    return null;
+}
+
+// ===== 全局可用函数 ===== 
+
+// 将函数添加到全局作用域
+window.refreshAnnouncement = refreshAnnouncement;
+window.closeAnnouncement = closeAnnouncement;
+window.toggleAnnouncementExpand = toggleAnnouncementExpand;
+window.getAnnouncementStats = getAnnouncementStats;
+
+// ===== 调试模式 ===== 
+
+// 在控制台中添加调试信息
+if (typeof console !== 'undefined') {
+    console.log('%c公告栏增强系统已加载! 🎉', 'color: #667eea; font-size: 16px; font-weight: bold;');
+    console.log('%c使用 window.refreshAnnouncement() 刷新公告栏', 'color: #764ba2; font-size: 12px;');
+    console.log('%c使用 window.getAnnouncementStats() 查看统计信息', 'color: #764ba2; font-size: 12px;');
+}

@@ -1,0 +1,505 @@
+/**
+ * 博客公告栏增强组件 - 样式文件
+ * 基于Butterfly主题的公告栏扩展系统
+ */
+
+/* 主容器样式 */
+.card-announcement-enhanced {
+    position: relative;
+    border-radius: var(--announcement-radius, 16px);
+    background: rgba(255, 255, 255, var(--announcement-bg-opacity, 0.15));
+    backdrop-filter: blur(var(--announcement-blur, 25px));
+    -webkit-backdrop-filter: blur(var(--announcement-blur, 25px));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--announcement-shadow, 0 8px 32px rgba(31, 38, 135, 0.12));
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-announcement-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.18);
+}
+
+/* 深色主题适配 */
+[data-theme=dark] .card-announcement-enhanced {
+    background: rgba(24, 40, 72, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 主题变体 */
+.card-announcement-enhanced.theme-gradient {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+    color: white;
+    border: none;
+}
+
+.card-announcement-enhanced.theme-minimal {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e0e0e0;
+    backdrop-filter: none;
+}
+
+.card-announcement-enhanced.theme-vibrant {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+}
+
+/* 位置变体 */
+.card-announcement-enhanced.position-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin: 0;
+    border-radius: 0;
+}
+
+.card-announcement-enhanced.position-floating {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+    margin: 0;
+}
+
+.card-announcement-enhanced.position-footer {
+    margin: 15px 0 0 0;
+}
+
+/* 内容区域 */
+.card-announcement-enhanced .card-content {
+    padding: 16px;
+    position: relative;
+}
+
+/* 头部样式 */
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.announcement-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--card-text-color);
+}
+
+.announcement-title i {
+    margin-right: 8px;
+    color: #667eea;
+    font-size: 14px;
+}
+
+.announcement-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.announcement-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.announcement-meta i {
+    font-size: 10px;
+}
+
+/* 主体内容 */
+.announcement-body {
+    margin: 12px 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+}
+
+.announcement-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.announcement-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.announcement-body::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 2px;
+}
+
+.announcement-content {
+    line-height: 1.6;
+    color: var(--card-text-color);
+}
+
+.announcement-content p {
+    margin: 8px 0;
+}
+
+.announcement-content a {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.announcement-content a:hover {
+    color: #764ba2;
+    border-bottom-color: #764ba2;
+}
+
+/* 底部样式 */
+.announcement-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+}
+
+[data-theme=dark] .announcement-footer {
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.announcement-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.announcement-btn {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    color: #667eea;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcement-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.announcement-btn i {
+    font-size: 10px;
+}
+
+.announcement-status {
+    opacity: 0.6;
+    font-size: 11px;
+}
+
+/* 关闭按钮 */
+.announcement-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--card-text-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.announcement-close:hover {
+    background: #ff4757;
+    color: white;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 加载状态 */
+.announcement-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #667eea;
+    z-index: 10;
+}
+
+[data-theme=dark] .announcement-loading {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.announcement-loading i {
+    font-size: 20px;
+}
+
+/* 错误状态 */
+.announcement-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    color: #ff4757;
+}
+
+.announcement-error i {
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.announcement-error button {
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.announcement-error button:hover {
+    background: #ff3838;
+    transform: translateY(-1px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .card-announcement-enhanced.position-floating {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    
+    .announcement-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .announcement-meta {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    .announcement-footer {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .announcement-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-announcement-enhanced .card-content {
+        padding: 12px;
+    }
+    
+    .announcement-title {
+        font-size: 14px;
+    }
+    
+    .announcement-content {
+        font-size: 14px;
+    }
+}
+
+/* 动画效果 */
+@keyframes announcement-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes announcement-fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes announcement-fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes announcement-fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes announcement-fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 高级视觉效果 */
+.card-announcement-enhanced::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    animation: announcement-glow 6s ease-in-out infinite;
+}
+
+.card-announcement-enhanced:hover::before {
+    opacity: 1;
+}
+
+@keyframes announcement-glow {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-40%, -40%) rotate(180deg);
+        opacity: 0.3;
+    }
+}
+
+/* 滚动条美化 */
+.announcement-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.announcement-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.announcement-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 3px;
+}
+
+.announcement-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+}
+
+/* 主题特定样式 */
+.theme-gradient .announcement-title i,
+.theme-vibrant .announcement-title i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-gradient .announcement-content a,
+.theme-vibrant .announcement-content a {
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-gradient .announcement-content a:hover,
+.theme-vibrant .announcement-content a:hover {
+    color: white;
+    border-bottom-color: white;
+}
+
+.theme-gradient .announcement-btn,
+.theme-vibrant .announcement-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.theme-gradient .announcement-btn:hover,
+.theme-vibrant .announcement-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 辅助功能 */
+.card-announcement-enhanced:focus-within {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.announcement-btn:focus,
+.announcement-close:focus {
+    outline: 1px solid #667eea;
+    outline-offset: 1px;
+}
+
+/* 打印样式 */
+@media print {
+    .card-announcement-enhanced {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+    
+    .announcement-close,
+    .announcement-actions {
+        display: none !important;
+    }
+}
