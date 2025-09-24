@@ -1,206 +1,337 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo博客搭建完全指南：从Hello World到专业博客 | M1yak0 SEKAI</title><meta name="author" content="M1yak0"><meta name="copyright" content="M1yak0"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo静态博客生成器完全入门指南，从安装配置到部署上线，助您快速搭建专业的个人技术博客。包含常用命令、主题配置、部署方案等实用内容。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客搭建完全指南：从Hello World到专业博客">
-<meta property="og:url" content="https://hypertension42.github.io/2025/08/06/hello-world/index.html">
-<meta property="og:site_name" content="M1yak0 SEKAI">
-<meta property="og:description" content="Hexo静态博客生成器完全入门指南，从安装配置到部署上线，助您快速搭建专业的个人技术博客。包含常用命令、主题配置、部署方案等实用内容。">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hypertension42.github.io/img/covers/20250915_225538.jpg">
-<meta property="article:published_time" content="2025-08-05T17:18:32.000Z">
-<meta property="article:modified_time" content="2025-09-24T05:31:34.033Z">
-<meta property="article:author" content="M1yak0">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="静态网站">
-<meta property="article:tag" content="教程">
-<meta property="article:tag" content="GitHub Pages">
-<meta property="article:tag" content="Markdown">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hypertension42.github.io/img/covers/20250915_225538.jpg"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Hexo博客搭建完全指南：从Hello World到专业博客",
-  "url": "https://hypertension42.github.io/2025/08/06/hello-world/",
-  "image": "https://hypertension42.github.io/img/covers/20250915_225538.jpg",
-  "datePublished": "2025-08-05T17:18:32.000Z",
-  "dateModified": "2025-09-24T05:31:34.033Z",
-  "author": [
-    {
-      "@type": "Person",
-      "name": "M1yak0",
-      "url": "https://Hypertension42.github.io"
-    }
-  ]
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hypertension42.github.io/2025/08/06/hello-world/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>Hexo博客搭建完全指南：从Hello World到专业博客 | M1yak0 SEKAI</title>
+    <meta name="author" content="M1yak0" />
+    <meta name="description" content="blogs" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<!-- ===============================
+     自定义增强功能样式（按加载优先级排序）
+     =============================== -->
+<!-- 1. 主题样式（首先加载） -->
+<link rel="stylesheet" href="/css/main.css" />
+
+<!-- 2. 自定义样式文件（确保在主题样式之后加载） -->
+<link rel="stylesheet" href="/my/style.css/mystyle.css" />
+
+<!-- 3. 公告增强样式（可选组件） -->
+<link rel="stylesheet" href="/my/style.css/announcement-enhanced.css" />
+
+<!-- Dark Mode 样式预加载（防止闪烁） -->
+<style id="dark-mode-preload">
+    /* 防止主题切换时闪烁 */
+    * {
+        transition: none !important;
     }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+    body {
+        transition: none !important;
+    }
+    
+    html {
+        transition: none !important;
+    }
+    
+    /* 初始化CSS变量 */
+    :root {
+        --theme-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --enable-transitions: 0;
+    }
+    
+    /* 确保基础颜色变量存在 */
+    :root {
+        --bg-primary: #ffffff;
+        --text-primary: #1a202c;
+        --border-primary: #e2e8f0;
+    }
+    
+    [data-theme="dark"] {
+        --bg-primary: #0a0e1a;
+        --text-primary: #e2e8f0;
+        --border-primary: #2d3748;
+    }
+</style>
+
+    
+    <!-- Dark Mode 初始化脚本（页面加载前执行） -->
+    <script>
+        // 防止主题切换闪烁
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme-preference');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    if (document.body) {
+                        document.body.classList.add('dark-mode');
+                    }
+                }
+                
+                // 启用过渡动画
+                setTimeout(function() {
+                    try {
+                        const style = document.getElementById('dark-mode-preload');
+                        if (style) {
+                            style.remove();
+                        }
+                        document.documentElement.style.setProperty('--enable-transitions', '1');
+                    } catch (e) {
+                        console.warn('过渡动画启用失败:', e);
+                    }
+                }, 100);
+            } catch (e) {
+                console.warn('Dark Mode 初始化失败:', e);
+            }
+        })();
+    </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body id="app-body">
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>M1YAK0 SEKAI</span>
+        </a>
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <!-- Dark Mode 切换按钮 -->
+        <a href="javascript:void(0)" id="theme-toggle" onclick="toggleDarkMode()" title="切换主题模式">
+            <i class="fa-solid fa-moon fa-fw theme-icon dark-icon"></i>
+            <i class="fa-solid fa-sun fa-fw theme-icon light-icon" style="display: none;"></i>
+            <span>&ensp;主题</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;M1YAK0 SEKAI</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <!-- 移动端 Dark Mode 切换 -->
+                <a href="javascript:void(0)" onclick="toggleDarkMode()">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%; position: relative;">
+                            <i class="fa-solid fa-moon fa-fw theme-icon dark-icon"></i>
+                            <i class="fa-solid fa-sun fa-fw theme-icon light-icon"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主题模式</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>Hexo博客搭建完全指南：从Hello World到专业博客</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/8/6
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                技术教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #ffa2c4">
+                    Hexo
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #03a9f4">
+                    博客
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="color: #ff7d73">
+                    静态网站
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%99%E7%A8%8B/" style="color: #ffa2c4">
+                    教程
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/GitHub-Pages/" style="color: #00bcd4">
+                    GitHub Pages
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Markdown/" style="color: #03a9f4">
+                    Markdown
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
     
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: true,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo博客搭建完全指南：从Hello World到专业博客',
-  isHighlightShrink: false,
-  isToc: true,
-  pageType: 'post'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
-  const $loadingBox = document.getElementById('loading-box')
-  const $body = document.body
-  const preloader = {
-    endLoading: () => {
-      if ($loadingBox.classList.contains('loaded')) return
-      $body.style.overflow = ''
-      $loadingBox.classList.add('loaded')
-    },
-    initLoading: () => {
-      $body.style.overflow = 'hidden'
-      $loadingBox.classList.remove('loaded')
-    }
-  }
-
-  preloader.initLoading()
-
-  if (document.readyState === 'complete') {
-    preloader.endLoading()
-  } else {
-    window.addEventListener('load', preloader.endLoading)
-    document.addEventListener('DOMContentLoaded', preloader.endLoading)
-    // Add timeout protection: force end after 7 seconds
-    setTimeout(preloader.endLoading, 7000)
-  }
-
-  if (false) {
-    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
-    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
-  }
-})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/banners/20250915_225538.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">M1yak0 SEKAI</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo博客搭建完全指南：从Hello World到专业博客</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Hexo博客搭建完全指南：从Hello World到专业博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-05T17:18:32.000Z" title="发表于 2025-08-06 01:18:32">2025-08-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-09-24T05:31:34.033Z" title="更新于 2025-09-24 13:31:34">2025-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+    <div class="content" v-pre>
+        <blockquote>
 <p><strong>欢迎来到M1yak0的技术世界！</strong> 这是我的第一篇博客文章，也是您Hexo博客之旅的起点。在这里，我将与您分享Hexo的强大功能和无限可能。</p>
 </blockquote>
 <span id="more"></span>
 <h2 id="🎉-欢迎使用Hexo！"><a href="#🎉-欢迎使用Hexo！" class="headerlink" title="🎉 欢迎使用Hexo！"></a>🎉 欢迎使用Hexo！</h2><p>欢迎使用 <strong><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></strong>！这是您的第一篇文章。查看 <strong><a target="_blank" rel="noopener" href="https://hexo.io/docs/">文档</a></strong> 了解更多信息。如果您在使用Hexo时遇到任何问题，可以在 <strong><a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">故障排除</a></strong> 中找到答案，或者在 <strong><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a></strong> 上向我们提问。</p>
 <hr>
-<h2 id="🚀-快速上手指南"><a href="#🚀-快速上手指南" class="headerlink" title="🚀 快速上手指南"></a>🚀 快速上手指南</h2><h3 id="📝-创建新文章"><a href="#📝-创建新文章" class="headerlink" title="📝 创建新文章"></a>📝 创建新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;我的新文章&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="🚀-快速上手指南"><a href="#🚀-快速上手指南" class="headerlink" title="🚀 快速上手指南"></a>🚀 快速上手指南</h2><h3 id="📝-创建新文章"><a href="#📝-创建新文章" class="headerlink" title="📝 创建新文章"></a>📝 创建新文章</h3><pre><code class="lang-bash">$ hexo new &quot;我的新文章&quot;
+</code></pre>
 <p><strong>详细说明</strong>：</p>
 <ul>
 <li>这个命令会在 <code>source/_posts/</code> 目录下创建一个新的Markdown文件</li>
@@ -208,7 +339,8 @@
 <li>自动包含基本的Front Matter配置</li>
 </ul>
 <p>📖 <strong>更多信息</strong>: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">写作文档</a></p>
-<h3 id="🖥️-启动本地服务器"><a href="#🖥️-启动本地服务器" class="headerlink" title="🖥️ 启动本地服务器"></a>🖥️ 启动本地服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="🖥️-启动本地服务器"><a href="#🖥️-启动本地服务器" class="headerlink" title="🖥️ 启动本地服务器"></a>🖥️ 启动本地服务器</h3><pre><code class="lang-bash">$ hexo server
+</code></pre>
 <p><strong>功能特性</strong>：</p>
 <ul>
 <li>✅ 实时预览您的博客</li>
@@ -217,7 +349,8 @@
 <li>✅ 支持草稿预览</li>
 </ul>
 <p>📖 <strong>更多信息</strong>: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">服务器文档</a></p>
-<h3 id="🔨-生成静态文件"><a href="#🔨-生成静态文件" class="headerlink" title="🔨 生成静态文件"></a>🔨 生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="🔨-生成静态文件"><a href="#🔨-生成静态文件" class="headerlink" title="🔨 生成静态文件"></a>🔨 生成静态文件</h3><pre><code class="lang-bash">$ hexo generate
+</code></pre>
 <p><strong>生成内容</strong>：</p>
 <ul>
 <li>📁 将Markdown文件转换为HTML</li>
@@ -226,7 +359,8 @@
 <li>📦 输出到 <code>public/</code> 目录</li>
 </ul>
 <p>📖 <strong>更多信息</strong>: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">生成文档</a></p>
-<h3 id="🌐-部署到远程站点"><a href="#🌐-部署到远程站点" class="headerlink" title="🌐 部署到远程站点"></a>🌐 部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="🌐-部署到远程站点"><a href="#🌐-部署到远程站点" class="headerlink" title="🌐 部署到远程站点"></a>🌐 部署到远程站点</h3><pre><code class="lang-bash">$ hexo deploy
+</code></pre>
 <p><strong>支持的部署平台</strong>：</p>
 <ul>
 <li>🔷 <strong>GitHub Pages</strong> - 免费静态网站托管</li>
@@ -236,10 +370,20 @@
 </ul>
 <p>📖 <strong>更多信息</strong>: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">部署文档</a></p>
 <hr>
-<h2 id="💡-进阶技巧"><a href="#💡-进阶技巧" class="headerlink" title="💡 进阶技巧"></a>💡 进阶技巧</h2><h3 id="🎯-常用命令组合"><a href="#🎯-常用命令组合" class="headerlink" title="🎯 常用命令组合"></a>🎯 常用命令组合</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清理缓存并重新生成</span></span><br><span class="line">$ hexo clean &amp;&amp; hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成并启动服务器</span></span><br><span class="line">$ hexo generate &amp;&amp; hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一键部署流程</span></span><br><span class="line">$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="💡-进阶技巧"><a href="#💡-进阶技巧" class="headerlink" title="💡 进阶技巧"></a>💡 进阶技巧</h2><h3 id="🎯-常用命令组合"><a href="#🎯-常用命令组合" class="headerlink" title="🎯 常用命令组合"></a>🎯 常用命令组合</h3><pre><code class="lang-bash"># 清理缓存并重新生成
+$ hexo clean &amp;&amp; hexo generate
+
+# 生成并启动服务器
+$ hexo generate &amp;&amp; hexo server
+
+# 一键部署流程
+$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy
+</code></pre>
 <h3 id="🛠️-配置优化建议"><a href="#🛠️-配置优化建议" class="headerlink" title="🛠️ 配置优化建议"></a>🛠️ 配置优化建议</h3><ol>
 <li><p><strong>📦 安装有用的插件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<pre><code class="lang-bash">npm install hexo-generator-sitemap --save
+npm install hexo-generator-feed --save
+</code></pre>
 </li>
 <li><p><strong>🎨 选择合适的主题</strong></p>
 <ul>
@@ -276,4 +420,88 @@
 <blockquote>
 <p><strong>温馨提示</strong>: 记住，最好的博客是经常更新的博客。保持写作的习惯，与读者分享您的知识和经验。祝您博客之旅愉快！✨</p>
 </blockquote>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://Hypertension42.github.io">M1yak0</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://hypertension42.github.io/2025/08/06/hello-world/">https://hypertension42.github.io/2025/08/06/hello-world/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://Hypertension42.github.io" target="_blank">M1yak0 SEKAI</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="post-meta__tags" href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">静态网站</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/GitHub-Pages/">GitHub Pages</a><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post-share"><div class="social-share" data-image="/img/covers/20250915_225538.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/08/10/%E6%9C%80%E6%B7%B1%E5%A4%84%E7%9A%84%E5%8C%BA%E5%88%AB/" title="与父亲的对话：发现优秀与普通人的最深层差异 🌆"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/covers/Image_1757293385934.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">与父亲的对话：发现优秀与普通人的最深层差异 🌆</div></div><div class="info-2"><div class="info-item-1">🌌 引言：一次深刻灵魂的对话在一个宁静的晚上，我与父亲进行了一次深入的对话。这次谈话让我意外地发现了一个重要的问题：  什么才是优秀与普通人之间的最深层差异？  通过这次对话，我终于找到了答案。  ⭐ 第一部分：优秀的人，相信什么？以胥晓宇为代表的这些优秀的人，他们相信的不是任何外部的权威或标签。他们相信的，是几条最朴素、但也最强大的第一性原理： 1. 🎯 他们相信”能力”，而非”标签”(They believe in Ability, not Labels)  ❌ 他们的自信，不来自于“我是清华的”或”我是中科大的” ✅ 他们的自信，来自于“我能解决这个问题”、”我能创造这个东西” 💎 他们的“作品集”，就是他们的信仰  2. 🚀 他们相信”创造”，而非”依附”(They believe in Creation, not Dependence)  ❌ 他们不相信任何一个”体制”或”平台”能保障他们的一生 ✅ 他们相信，唯一的安全感，来自于自己持续不断地创造价值的能力 🛥️ 他们的人生，不是在寻找一个安全的”港湾”，而是在打造一艘能穿越任何风暴的”船”  3. 🔨 他...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">M1yak0</div><div class="author-info-description">探索代码，思考人生</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hypertension42"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%89-%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8Hexo%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">🎉 欢迎使用Hexo！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%80-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8D%97"><span class="toc-number">2.</span> <span class="toc-text">🚀 快速上手指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%9D-%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E7%AB%A0"><span class="toc-number">2.1.</span> <span class="toc-text">📝 创建新文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%96%A5%EF%B8%8F-%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">🖥️ 启动本地服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%A8-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">🔨 生成静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8C%90-%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%A8%8B%E7%AB%99%E7%82%B9"><span class="toc-number">2.4.</span> <span class="toc-text">🌐 部署到远程站点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%A1-%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7"><span class="toc-number">3.</span> <span class="toc-text">💡 进阶技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%8E%AF-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88"><span class="toc-number">3.1.</span> <span class="toc-text">🎯 常用命令组合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%9B%A0%EF%B8%8F-%E9%85%8D%E7%BD%AE%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE"><span class="toc-number">3.2.</span> <span class="toc-text">🛠️ 配置优化建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%9A-%E6%8E%A8%E8%8D%90%E8%B5%84%E6%BA%90"><span class="toc-number">3.3.</span> <span class="toc-text">📚 推荐资源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%8A-%E5%BC%80%E5%A7%8B%E6%82%A8%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85"><span class="toc-number">4.</span> <span class="toc-text">🎊 开始您的博客之旅</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲"><img src= "/img/loading.gif" data-lazy-src="/img/covers/20250909_102118.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="现代叶公好龙：一段代码引发的哲学思考 🐲"/></a><div class="content"><a class="title" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲">现代叶公好龙：一段代码引发的哲学思考 🐲</a><time datetime="2025-08-18T06:30:00.000Z" title="发表于 2025-08-18 14:30:00">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1757648759558.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"/></a><div class="content"><a class="title" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟">从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟</a><time datetime="2025-08-18T04:16:02.000Z" title="发表于 2025-08-18 12:16:02">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊"><img src= "/img/loading.gif" data-lazy-src="/img/covers/Image_1758594936300.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI时代的信息海洋：一手渠道资源收藏夹 🌊"/></a><div class="content"><a class="title" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊">AI时代的信息海洋：一手渠道资源收藏夹 🌊</a><time datetime="2025-08-17T08:15:00.000Z" title="发表于 2025-08-17 16:15:00">2025-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/16/%E5%8F%8D%E6%80%9D/" title="从拖延到高效：用程序员思维重构人生'函数' 🔄"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1758040070651.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从拖延到高效：用程序员思维重构人生'函数' 🔄"/></a><div class="content"><a class="title" href="/2025/08/16/%E5%8F%8D%E6%80%9D/" title="从拖延到高效：用程序员思维重构人生'函数' 🔄">从拖延到高效：用程序员思维重构人生'函数' 🔄</a><time datetime="2025-08-16T09:00:00.000Z" title="发表于 2025-08-16 17:00:00">2025-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1757667385547.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"/></a><div class="content"><a class="title" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆">新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆</a><time datetime="2025-08-15T02:30:00.000Z" title="发表于 2025-08-15 10:30:00">2025-08-15</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By M1yak0</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2025 - 2025 M1yak0 SEKAI
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;M1yak0
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    <!-- ===============================
+         自定义增强功能脚本（按依赖顺序加载）
+         =============================== -->
+    <!-- 1. 基础工具脚本 -->
+    <script>
+        // 全局错误处理
+        window.addEventListener('error', function(e) {
+            console.warn('Script error:', e.message, 'at', e.filename + ':' + e.lineno);
+        });
+        
+        // 确保DOM已加载
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('🎨 博客增强系统加载完成');
+            });
+        } else {
+            console.log('🎨 博客增强系统已就绪');
+        }
+        
+        // 防止JS脚本加载失败影响整个页面
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.warn('全局错误捕获:', { message, source, lineno, colno, error });
+            return false; // 继续默认处理
+        };
+    </script>
+    
+    <!-- 2. Dark Mode 系统（优先加载） -->
+    <script src="/js/dark-mode.js" onerror="console.warn('Dark Mode 脚本加载失败')"></script>
+    
+    <!-- 3. 公告栏增强系统 -->
+    <script src="/js/announcement-config-manager.js" defer onerror="console.warn('公告配置管理器加载失败')"></script>
+    <script src="/js/announcement-file-manager.js" defer onerror="console.warn('公告文件管理器加载失败')"></script>
+    <script src="/js/announcement-enhanced.js" defer onerror="console.warn('公告增强系统加载失败')"></script>
+    
+    <!-- 4. 自定义特效系统（最后加载） -->
+    <script src="/js/custom.js" defer onerror="console.warn('自定义特效脚本加载失败')"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>

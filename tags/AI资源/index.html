@@ -1,201 +1,1117 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>标签: AI资源 | M1yak0 SEKAI</title><meta name="author" content="M1yak0"><meta name="copyright" content="M1yak0"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="M1yak0 SEKAI">
-<meta property="og:url" content="https://hypertension42.github.io/tags/AI%E8%B5%84%E6%BA%90/index.html">
-<meta property="og:site_name" content="M1yak0 SEKAI">
-<meta property="og:description" content="blogs">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://hypertension42.github.io/img/butterfly-icon.png">
-<meta property="article:author" content="M1yak0">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hypertension42.github.io/img/butterfly-icon.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hypertension42.github.io/tags/AI%E8%B5%84%E6%BA%90/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>Tags: AI资源 | M1yak0 SEKAI</title>
+    <meta name="author" content="M1yak0" />
+    <meta name="description" content="blogs" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<!-- ===============================
+     自定义增强功能样式（按加载优先级排序）
+     =============================== -->
+<!-- 1. 主题样式（首先加载） -->
+<link rel="stylesheet" href="/css/main.css" />
+
+<!-- 2. 自定义样式文件（确保在主题样式之后加载） -->
+<link rel="stylesheet" href="/my/style.css/mystyle.css" />
+
+<!-- 3. 公告增强样式（可选组件） -->
+<link rel="stylesheet" href="/my/style.css/announcement-enhanced.css" />
+
+<!-- Dark Mode 样式预加载（防止闪烁） -->
+<style id="dark-mode-preload">
+    /* 防止主题切换时闪烁 */
+    * {
+        transition: none !important;
     }
-
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
-  
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
-
-      const theme = saveToLocal.get('theme')
     
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+    body {
+        transition: none !important;
+    }
+    
+    html {
+        transition: none !important;
+    }
+    
+    /* 初始化CSS变量 */
+    :root {
+        --theme-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --enable-transitions: 0;
+    }
+    
+    /* 确保基础颜色变量存在 */
+    :root {
+        --bg-primary: #ffffff;
+        --text-primary: #1a202c;
+        --border-primary: #e2e8f0;
+    }
+    
+    [data-theme="dark"] {
+        --bg-primary: #0a0e1a;
+        --text-primary: #e2e8f0;
+        --border-primary: #2d3748;
+    }
+</style>
+
+    
+    <!-- Dark Mode 初始化脚本（页面加载前执行） -->
+    <script>
+        // 防止主题切换闪烁
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme-preference');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+                
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    if (document.body) {
+                        document.body.classList.add('dark-mode');
+                    }
+                }
+                
+                // 启用过渡动画
+                setTimeout(function() {
+                    try {
+                        const style = document.getElementById('dark-mode-preload');
+                        if (style) {
+                            style.remove();
+                        }
+                        document.documentElement.style.setProperty('--enable-transitions', '1');
+                    } catch (e) {
+                        console.warn('过渡动画启用失败:', e);
+                    }
+                }, 100);
+            } catch (e) {
+                console.warn('Dark Mode 初始化失败:', e);
+            }
+        })();
+    </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body id="app-body">
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>M1YAK0 SEKAI</span>
+        </a>
         
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+        <!-- Dark Mode 切换按钮 -->
+        <a href="javascript:void(0)" id="theme-toggle" onclick="toggleDarkMode()" title="切换主题模式">
+            <i class="fa-solid fa-moon fa-fw theme-icon dark-icon"></i>
+            <i class="fa-solid fa-sun fa-fw theme-icon light-icon" style="display: none;"></i>
+            <span>&ensp;主题</span>
+        </a>
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;M1YAK0 SEKAI</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+                <!-- 移动端 Dark Mode 切换 -->
+                <a href="javascript:void(0)" onclick="toggleDarkMode()">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%; position: relative;">
+                            <i class="fa-solid fa-moon fa-fw theme-icon dark-icon"></i>
+                            <i class="fa-solid fa-sun fa-fw theme-icon light-icon"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主题模式</div>
+                    </div>
+                </a>
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div id="archives">
     
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: '复制成功',
-    error: '复制失败',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
-    buttonText: '加载更多'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: true,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '标签: AI资源',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'tag'
-}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
-  const $loadingBox = document.getElementById('loading-box')
-  const $body = document.body
-  const preloader = {
-    endLoading: () => {
-      if ($loadingBox.classList.contains('loaded')) return
-      $body.style.overflow = ''
-      $loadingBox.classList.add('loaded')
-    },
-    initLoading: () => {
-      $body.style.overflow = 'hidden'
-      $loadingBox.classList.remove('loaded')
-    }
-  }
-
-  preloader.initLoading()
-
-  if (document.readyState === 'complete') {
-    preloader.endLoading()
-  } else {
-    window.addEventListener('load', preloader.endLoading)
-    document.addEventListener('DOMContentLoaded', preloader.endLoading)
-    // Add timeout protection: force end after 7 seconds
-    setTimeout(preloader.endLoading, 7000)
-  }
-
-  if (false) {
-    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
-    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
-  }
-})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">M1yak0 SEKAI</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">AI资源</h1></div></header><main class="layout" id="content-inner"><div id="tag"><div class="article-sort-title">标签 - AI资源</div><div class="article-sort"><div class="article-sort-item year">2025</div><div class="article-sort-item"><a class="article-sort-item-img" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊"><img src= "/img/loading.gif" data-lazy-src="/img/covers/Image_1758594936300.jpg" alt="AI时代的信息海洋：一手渠道资源收藏夹 🌊" onerror="this.onerror=null;this.src='/img/404.jpg'"></a><div class="article-sort-item-info"><div class="article-sort-item-time"><i class="far fa-calendar-alt"></i><time class="post-meta-date-created" datetime="2025-08-17T08:15:00.000Z" title="发表于 2025-08-17 16:15:00">2025-08-17</time></div><a class="article-sort-item-title" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊">AI时代的信息海洋：一手渠道资源收藏夹 🌊</a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">M1yak0</div><div class="author-info-description">探索代码，思考人生</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">18</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Hypertension42"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲"><img src= "/img/loading.gif" data-lazy-src="/img/covers/20250909_102118.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="现代叶公好龙：一段代码引发的哲学思考 🐲"/></a><div class="content"><a class="title" href="/2025/08/18/%E5%8F%B6%E5%85%AC/" title="现代叶公好龙：一段代码引发的哲学思考 🐲">现代叶公好龙：一段代码引发的哲学思考 🐲</a><time datetime="2025-08-18T06:30:00.000Z" title="发表于 2025-08-18 14:30:00">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1757648759558.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟"/></a><div class="content"><a class="title" href="/2025/08/18/prompts/" title="从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟">从ASML的逻辑炼狱到理性思维：一个工程师的成长感悟</a><time datetime="2025-08-18T04:16:02.000Z" title="发表于 2025-08-18 12:16:02">2025-08-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊"><img src= "/img/loading.gif" data-lazy-src="/img/covers/Image_1758594936300.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI时代的信息海洋：一手渠道资源收藏夹 🌊"/></a><div class="content"><a class="title" href="/2025/08/17/%E8%87%AA%E5%AD%98/" title="AI时代的信息海洋：一手渠道资源收藏夹 🌊">AI时代的信息海洋：一手渠道资源收藏夹 🌊</a><time datetime="2025-08-17T08:15:00.000Z" title="发表于 2025-08-17 16:15:00">2025-08-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/16/%E5%8F%8D%E6%80%9D/" title="从拖延到高效：用程序员思维重构人生'函数' 🔄"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1758040070651.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从拖延到高效：用程序员思维重构人生'函数' 🔄"/></a><div class="content"><a class="title" href="/2025/08/16/%E5%8F%8D%E6%80%9D/" title="从拖延到高效：用程序员思维重构人生'函数' 🔄">从拖延到高效：用程序员思维重构人生'函数' 🔄</a><time datetime="2025-08-16T09:00:00.000Z" title="发表于 2025-08-16 17:00:00">2025-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"><img src= "/img/loading.gif" data-lazy-src="/img/covers/1757667385547.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆"/></a><div class="content"><a class="title" href="/2025/08/15/un/" title="新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆">新时代的麦肯锡：信息工作者在结构文明时代的第一次变革 🌆</a><time datetime="2025-08-15T02:30:00.000Z" title="发表于 2025-08-15 10:30:00">2025-08-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
-            <i class="fas fa-folder-open"></i>
-            <span>分类</span>
-            <a class="card-more-btn" href="/categories/" title="查看更多">
-      <i class="fas fa-angle-right"></i></a>
-          </div>
-          <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"><span class="card-category-list-name">个人成长</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/%E6%80%9D%E7%BB%B4%E6%94%B9%E8%BF%9B/"><span class="card-category-list-name">思维改进</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/"><span class="card-category-list-name">人生哲学</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E5%93%B2%E5%AD%A6/%E6%88%90%E9%95%BF%E6%80%9D%E8%80%83/"><span class="card-category-list-name">成长思考</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/"><span class="card-category-list-name">人生思考</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/"><span class="card-category-list-name">哲学理论</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/"><span class="card-category-list-name">哲学思辨</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/%E4%B8%AA%E4%BA%BA%E5%8F%8D%E6%80%9D/"><span class="card-category-list-name">个人反思</span><span class="card-category-list-count">1</span></a></li></ul></li>
-          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%A6%99%E5%86%9C%E4%BF%A1%E6%81%AF%E8%AE%BA/" style="font-size: 1.1em; color: #999">香农信息论</a> <a href="/tags/%E7%86%B5%E5%A2%9E%E5%AF%B9%E6%8A%97/" style="font-size: 1.1em; color: #999">熵增对抗</a> <a href="/tags/%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" style="font-size: 1.1em; color: #999">费曼学习法</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%8C%96%E6%80%9D%E7%BB%B4/" style="font-size: 1.1em; color: #999">函数化思维</a> <a href="/tags/%E8%87%AA%E6%88%91%E8%AE%A4%E7%9F%A5/" style="font-size: 1.1em; color: #999">自我认知</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="font-size: 1.1em; color: #999">知识管理</a> <a href="/tags/%E9%80%92%E5%BD%92%E6%80%9D%E8%80%83/" style="font-size: 1.1em; color: #999">递归思考</a> <a href="/tags/%E8%87%AA%E6%88%91%E5%AE%9E%E7%8E%B0/" style="font-size: 1.1em; color: #999">自我实现</a> <a href="/tags/%E7%AE%A1%E7%90%86%E5%92%A8%E8%AF%A2/" style="font-size: 1.1em; color: #999">管理咨询</a> <a href="/tags/%E7%BB%93%E6%9E%84%E6%96%87%E6%98%8E/" style="font-size: 1.1em; color: #999">结构文明</a> <a href="/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" style="font-size: 1.1em; color: #999">人生感悟</a> <a href="/tags/%E4%BC%98%E7%A7%80%E5%93%B2%E5%AD%A6/" style="font-size: 1.1em; color: #999">优秀哲学</a> <a href="/tags/ASML/" style="font-size: 1.1em; color: #999">ASML</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E5%8F%98%E9%9D%A9/" style="font-size: 1.1em; color: #999">行业变革</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%B7%A5%E4%BD%9C%E8%80%85/" style="font-size: 1.1em; color: #999">信息工作者</a> <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="font-size: 1.1em; color: #999">函数式编程</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%93%B2%E5%AD%A6/" style="font-size: 1.1em; color: #999">程序员哲学</a> <a href="/tags/%E8%AE%BF%E8%B0%88%E6%92%AD%E5%AE%A2/" style="font-size: 1.1em; color: #999">访谈播客</a> <a href="/tags/%E4%BB%B7%E5%80%BC%E5%88%9B%E9%80%A0/" style="font-size: 1.1em; color: #999">价值创造</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/tags/%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86/" style="font-size: 1.1em; color: #999">第一性原理</a> <a href="/tags/%E6%80%9D%E7%BB%B4%E6%A1%86%E6%9E%B6/" style="font-size: 1.1em; color: #999">思维框架</a> <a href="/tags/AI%E8%B5%84%E6%BA%90/" style="font-size: 1.1em; color: #999">AI资源</a> <a href="/tags/%E7%88%B6%E5%AD%90%E5%AF%B9%E8%AF%9D/" style="font-size: 1.1em; color: #999">父子对话</a> <a href="/tags/%E5%AE%9E%E8%B7%B5%E4%B8%8E%E7%A9%BA%E6%83%B3/" style="font-size: 1.1em; color: #999">实践与空想</a> <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="font-size: 1.1em; color: #999">效率提升</a> <a href="/tags/%E8%83%BD%E5%8A%9B%E4%B8%8E%E6%A0%87%E7%AD%BE/" style="font-size: 1.1em; color: #999">能力与标签</a> <a href="/tags/%E5%88%9B%E9%80%A0%E4%B8%8E%E4%BE%9D%E9%99%84/" style="font-size: 1.1em; color: #999">创造与依附</a> <a href="/tags/%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4/" style="font-size: 1.1em; color: #999">逻辑思维</a> <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="font-size: 1.1em; color: #999">静态网站</a> <a href="/tags/%E4%BA%BA%E7%94%9F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">人生操作系统</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 1.1em; color: #999">人工智能</a> <a href="/tags/AI%E5%A4%A7%E4%BC%9A/" style="font-size: 1.1em; color: #999">AI大会</a> <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%96%87%E5%8C%96/" style="font-size: 1.1em; color: #999">工程师文化</a> <a href="/tags/CS61A/" style="font-size: 1.1em; color: #999">CS61A</a> <a href="/tags/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E5%90%8C/" style="font-size: 1.1em; color: #999">身份认同</a> <a href="/tags/YouTube%E9%A2%91%E9%81%93/" style="font-size: 1.1em; color: #999">YouTube频道</a> <a href="/tags/%E4%BF%A1%E5%BF%B5%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">信念系统</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.1em; color: #999">教程</a> <a href="/tags/Python/" style="font-size: 1.1em; color: #999">Python</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>归档</span>
-      
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="/tags/Hexo/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Hexo
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                博客
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                静态网站
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%95%99%E7%A8%8B/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/GitHub-Pages/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                GitHub Pages
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/Markdown/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Markdown
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                逻辑思维
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%81%8C%E5%9C%BA%E7%BB%8F%E9%AA%8C/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                职场经验
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/ASML/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                ASML
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%90%86%E6%80%A7%E5%88%86%E6%9E%90/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                理性分析
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%96%87%E5%8C%96/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                工程师文化
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%AE%A1%E7%90%86%E6%80%9D%E8%80%83/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                管理思考
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%BA%A6%E8%82%AF%E9%94%A1/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                麦肯锡
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BF%A1%E6%81%AF%E5%B7%A5%E4%BD%9C%E8%80%85/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                信息工作者
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/CS%E8%BD%AC%E5%9E%8B/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                CS转型
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%AE%A1%E7%90%86%E5%92%A8%E8%AF%A2/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                管理咨询
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                人工智能
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%A1%8C%E4%B8%9A%E5%8F%98%E9%9D%A9/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                行业变革
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%A6%99%E5%86%9C%E4%BF%A1%E6%81%AF%E8%AE%BA/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                香农信息论
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%BB%93%E6%9E%84%E6%96%87%E6%98%8E/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                结构文明
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                第一性原理
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BA%BA%E7%94%9F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                人生操作系统
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%A4%A9%E6%B6%AF%E7%A5%9E%E8%B4%B4/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                天涯神贴
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BB%B7%E5%80%BC%E5%88%9B%E9%80%A0/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                价值创造
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%86%B5%E5%A2%9E%E5%AF%B9%E6%8A%97/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                熵增对抗
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%87%AA%E6%88%91%E5%AE%9E%E7%8E%B0/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                自我实现
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%80%9D%E7%BB%B4%E6%A1%86%E6%9E%B6/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                思维框架
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%8B%96%E5%BB%B6%E7%97%87/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                拖延症
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                效率提升
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%80%9D%E7%BB%B4/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                程序员思维
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%B9%A0%E6%83%AF%E5%85%BB%E6%88%90/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                习惯养成
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%80%92%E5%BD%92%E6%80%9D%E8%80%83/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                递归思考
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%8C%96%E6%80%9D%E7%BB%B4/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                函数化思维
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                自我管理
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%8F%B6%E5%85%AC%E5%A5%BD%E9%BE%99/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                叶公好龙
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%87%AA%E6%88%91%E8%AE%A4%E7%9F%A5/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                自我认知
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%93%B2%E5%AD%A6%E6%80%9D%E8%BE%A8/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                哲学思辨
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%93%B2%E5%AD%A6/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                程序员哲学
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%8E%B0%E5%AE%9E%E4%B8%8E%E7%90%86%E6%83%B3/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                现实与理想
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E5%90%8C/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                身份认同
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                深度思考
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BC%98%E7%A7%80%E5%93%B2%E5%AD%A6/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                优秀哲学
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BF%A1%E5%BF%B5%E7%B3%BB%E7%BB%9F/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                信念系统
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%83%BD%E5%8A%9B%E4%B8%8E%E6%A0%87%E7%AD%BE/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                能力与标签
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%88%9B%E9%80%A0%E4%B8%8E%E4%BE%9D%E9%99%84/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                创造与依附
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%AE%9E%E8%B7%B5%E4%B8%8E%E7%A9%BA%E6%83%B3/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                实践与空想
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%8C%81%E4%B9%85%E4%B8%8E%E5%A4%A9%E8%B5%8B/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                持久与天赋
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%88%B6%E5%AD%90%E5%AF%B9%E8%AF%9D/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                父子对话
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BA%BA%E7%94%9F%E6%84%9F%E6%82%9F/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                人生感悟
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/AI%E8%B5%84%E6%BA%90/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                AI资源
+            </a>
+        </span>
+        
+        
+        
+        
+        
+        <span>
+            <a href="/tags/YouTube%E9%A2%91%E9%81%93/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                YouTube频道
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%B8%80%E6%89%8B%E4%BF%A1%E6%81%AF/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                一手信息
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%AE%BF%E8%B0%88%E6%92%AD%E5%AE%A2/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                访谈播客
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/AI%E5%A4%A7%E4%BC%9A/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                AI大会
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                教程分享
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                知识管理
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                持续学习
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/CS61A/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                CS61A
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/Python/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                Python
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                高阶函数
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%A2%98%E8%A7%A3%E5%88%86%E6%9E%90/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                题解分析
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                函数式编程
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/" style="background: #00bcd4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                费曼学习法
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E7%BB%B4/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                编程思维
+            </a>
+        </span>
+        
+        
     </div>
-  
-    <ul class="card-archive-list">
-      
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2025/08/">
-            <span class="card-archive-list-date">
-              八月 2025
+    
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2025/8/17</div>
+            <a href="/2025/08/17/%E8%87%AA%E5%AD%98/">
+                <h3>AI时代的信息海洋：一手渠道资源收藏夹 🌊</h3>
+            </a>
+            <div class="info">
+                
+                <span class="category">
+                    <a href="/categories/%E8%B5%84%E6%BA%90%E6%94%B6%E8%97%8F/">
+                        <span class="icon">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </span>
+                        资源收藏
+                    </a>
+                </span>
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/AI%E8%B5%84%E6%BA%90/" style="color: #03a9f4">
+                            AI资源
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/YouTube%E9%A2%91%E9%81%93/" style="color: #ff7d73">
+                            YouTube频道
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E4%B8%80%E6%89%8B%E4%BF%A1%E6%81%AF/" style="color: #00bcd4">
+                            一手信息
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E8%AE%BF%E8%B0%88%E6%92%AD%E5%AE%A2/" style="color: #03a9f4">
+                            访谈播客
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/AI%E5%A4%A7%E4%BC%9A/" style="color: #00bcd4">
+                            AI大会
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/" style="color: #ffa2c4">
+                            教程分享
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" style="color: #00a596">
+                            知识管理
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0/" style="color: #03a9f4">
+                            持续学习
+                        </a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2025 - 2025 M1yak0 SEKAI
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            <span class="card-archive-list-count">9</span>
-          </a>
-        </li>
-      
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">9</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-09-24T07:40:10.659Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By M1yak0</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/npm/hexo-theme-butterfly/source/js/main.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            &commat;M1yak0
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    <!-- ===============================
+         自定义增强功能脚本（按依赖顺序加载）
+         =============================== -->
+    <!-- 1. 基础工具脚本 -->
+    <script>
+        // 全局错误处理
+        window.addEventListener('error', function(e) {
+            console.warn('Script error:', e.message, 'at', e.filename + ':' + e.lineno);
+        });
+        
+        // 确保DOM已加载
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('🎨 博客增强系统加载完成');
+            });
+        } else {
+            console.log('🎨 博客增强系统已就绪');
+        }
+        
+        // 防止JS脚本加载失败影响整个页面
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.warn('全局错误捕获:', { message, source, lineno, colno, error });
+            return false; // 继续默认处理
+        };
+    </script>
+    
+    <!-- 2. Dark Mode 系统（优先加载） -->
+    <script src="/js/dark-mode.js" onerror="console.warn('Dark Mode 脚本加载失败')"></script>
+    
+    <!-- 3. 公告栏增强系统 -->
+    <script src="/js/announcement-config-manager.js" defer onerror="console.warn('公告配置管理器加载失败')"></script>
+    <script src="/js/announcement-file-manager.js" defer onerror="console.warn('公告文件管理器加载失败')"></script>
+    <script src="/js/announcement-enhanced.js" defer onerror="console.warn('公告增强系统加载失败')"></script>
+    
+    <!-- 4. 自定义特效系统（最后加载） -->
+    <script src="/js/custom.js" defer onerror="console.warn('自定义特效脚本加载失败')"></script>
+    
+</body>
+</html>

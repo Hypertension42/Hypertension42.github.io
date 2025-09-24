@@ -1,0 +1,345 @@
+/* Glass Morphism Effects and Hover Animations */
+
+/* Base glass morphism utility classes */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect-strong {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-effect-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover animations */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.hover-glow {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.hover-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(45deg, 
+        rgba(255, 0, 150, 0.1), 
+        rgba(0, 255, 255, 0.1), 
+        rgba(255, 255, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.hover-glow:hover::before {
+    opacity: 1;
+}
+
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Apply glass effects to common elements */
+.post-card,
+.card,
+.widget {
+    @extend .glass-effect;
+    @extend .hover-lift;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Navigation and header elements */
+.navbar,
+.header,
+nav {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Buttons with glass effect */
+.btn,
+button,
+.button {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover,
+button:hover,
+.button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Sidebar and aside elements */
+.sidebar,
+.aside,
+aside {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+}
+
+/* Code blocks enhancement */
+pre,
+.highlight {
+    background: rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+pre:hover,
+.highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Form elements */
+input,
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
+}
+
+/* Tags and badges */
+.tag,
+.badge,
+.label {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 20px !important;
+    transition: all 0.2s ease !important;
+}
+
+.tag:hover,
+.badge:hover,
+.label:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination a,
+.pagination span {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+}
+
+.pagination a:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+/* Search box */
+.search-input,
+.search-box input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 25px !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-input:focus,
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Floating action button */
+.fab,
+.floating-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.fab:hover,
+.floating-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Modal and overlay */
+.modal,
+.overlay,
+.popup {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Tooltip */
+.tooltip {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+}
+
+/* Animation keyframes */
+@keyframes glass-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.glass-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: glass-shimmer 2s infinite;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glass-effect,
+    .glass-effect-strong,
+    .glass-effect-dark {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .hover-lift:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .hover-lift,
+    .hover-scale,
+    .btn,
+    button,
+    .button,
+    pre,
+    .highlight,
+    input,
+    textarea,
+    select,
+    .tag,
+    .badge,
+    .label,
+    .pagination a,
+    .pagination span,
+    .search-input,
+    .search-box input,
+    .fab,
+    .floating-btn {
+        transition: none !important;
+    }
+    
+    .hover-lift:hover,
+    .hover-scale:hover,
+    .btn:hover,
+    button:hover,
+    .button:hover,
+    pre:hover,
+    .highlight:hover,
+    .tag:hover,
+    .badge:hover,
+    .label:hover,
+    .pagination a:hover,
+    .fab:hover,
+    .floating-btn:hover {
+        transform: none !important;
+    }
+    
+    .glass-shimmer::before {
+        animation: none !important;
+    }
+}

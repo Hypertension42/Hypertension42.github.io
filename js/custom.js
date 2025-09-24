@@ -8,30 +8,91 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化公告栏增强系统
     initAnnouncementSystem();
     
-    // 1. 鼠标跟随彩色粒子效果
-    function createParticle(x, y) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
+    // 1. 🌈 鼠标彩虹轨迹特效 (增强版)
+    function createRainbowTrail(x, y) {
+        const trail = document.createElement('div');
+        const colors = [
+            '#ff0080', '#ff8000', '#ffff00', '#80ff00',
+            '#00ff00', '#00ff80', '#00ffff', '#0080ff',
+            '#0000ff', '#8000ff', '#ff00ff', '#ff0040'
+        ];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const size = Math.random() * 8 + 4;
+        
+        trail.style.cssText = `
             position: fixed;
-            width: 4px;
-            height: 4px;
-            background: hsl(${Math.random() * 360}, 70%, 60%);
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            left: ${x}px;
-            top: ${y}px;
-            animation: particleFloat 2s ease-out forwards;
+            left: ${x - size/2}px;
+            top: ${y - size/2}px;
+            box-shadow: 0 0 ${size*2}px ${color};
+            animation: rainbowTrailFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         `;
         
-        document.body.appendChild(particle);
+        document.body.appendChild(trail);
         
         setTimeout(() => {
-            document.body.removeChild(particle);
-        }, 2000);
+            if (trail && trail.parentNode) {
+                trail.parentNode.removeChild(trail);
+            }
+        }, 1200);
     }
     
-    // 添加粒子动画CSS
+    // 鼠标点击爆炸效果
+    function createClickExplosion(x, y) {
+        const particleCount = 12;
+        const colors = ['#ff0080', '#00ff80', '#8000ff', '#ff8000', '#0080ff'];
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            const angle = (Math.PI * 2 * i) / particleCount;
+            const velocity = Math.random() * 80 + 40;
+            const size = Math.random() * 6 + 3;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            particle.style.cssText = `
+                position: fixed;
+                left: ${x}px;
+                top: ${y}px;
+                width: ${size}px;
+                height: ${size}px;
+                background: ${color};
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                box-shadow: 0 0 ${size*3}px ${color};
+            `;
+            
+            document.body.appendChild(particle);
+            
+            const endX = x + Math.cos(angle) * velocity;
+            const endY = y + Math.sin(angle) * velocity;
+            
+            particle.animate([
+                {
+                    transform: `translate(0, 0) scale(1)`,
+                    opacity: 1
+                },
+                {
+                    transform: `translate(${endX - x}px, ${endY - y}px) scale(0)`,
+                    opacity: 0
+                }
+            ], {
+                duration: 800,
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            }).onfinish = () => {
+                if (particle && particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                }
+            };
+        }
+    }
+    
+    // 添加新的动画样式CSS
     const style = document.createElement('style');
     style.textContent = `
         @keyframes particleFloat {
@@ -45,27 +106,117 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        @keyframes rainbowTrailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px);
+            }
+        }
+        
         @keyframes textGlow {
             0%, 100% { text-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
             50% { text-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(118, 75, 162, 0.6); }
         }
         
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px);
+            }
+        }
+        
         .glow-text {
             animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        /* 📊 阅读进度条样式 */
+        #reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #667eea 0%, 
+                #764ba2 25%, 
+                #f093fb 50%, 
+                #f5576c 75%, 
+                #667eea 100%);
+            background-size: 200% 100%;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+            z-index: 9998;
+            width: 0%;
+            transition: width 0.3s ease, opacity 0.3s ease;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        /* 📋 代码复制按钮样式 */
+        .code-copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #fff !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 6px !important;
+            padding: 8px 10px !important;
+            cursor: pointer !important;
+            font-size: 14px !important;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(10px) !important;
+            z-index: 10 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .code-copy-btn:hover {
+            background: rgba(102, 126, 234, 0.8) !important;
+            transform: scale(1.05) !important;
+        }
+        
+        .code-copy-btn.success {
+            background: rgba(16, 185, 129, 0.8) !important;
+        }
+        
+        .code-copy-btn.error {
+            background: rgba(239, 68, 68, 0.8) !important;
         }
     `;
     document.head.appendChild(style);
     
-    // 鼠标移动时创建粒子（减少频率）
-    let particleTimer;
+    // 鼠标移动时创建彩虹轨迹（增强版）
+    let trailTimer;
     document.addEventListener('mousemove', function(e) {
-        if (particleTimer) return;
-        particleTimer = setTimeout(() => {
-            if (Math.random() < 0.3) { // 30%概率生成粒子
-                createParticle(e.clientX, e.clientY);
+        if (trailTimer) return;
+        trailTimer = setTimeout(() => {
+            if (Math.random() < 0.4) { // 40%概率生成轨迹
+                createRainbowTrail(e.clientX, e.clientY);
             }
-            particleTimer = null;
-        }, 50);
+            trailTimer = null;
+        }, 30); // 更高频率
+    });
+    
+    // 鼠标点击时创建爆炸效果
+    document.addEventListener('click', function(e) {
+        createClickExplosion(e.clientX, e.clientY);
     });
     
     // 2. 平滑滚动增强
@@ -198,31 +349,180 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(starfield);
     }
     
-    // 7. 代码块复制功能增强
-    function enhanceCodeBlocks() {
-        const codeBlocks = document.querySelectorAll('pre');
+    // 7. 📊 阅读进度条系统
+    function initReadingProgress() {
+        // 只在文章页面显示
+        if (!document.querySelector('#article-container')) {
+            return;
+        }
+
+        const progressBar = document.createElement('div');
+        progressBar.id = 'reading-progress';
+        document.body.appendChild(progressBar);
         
-        codeBlocks.forEach(block => {
-            // 添加语言标签
-            const code = block.querySelector('code');
-            if (code && code.className) {
-                const lang = code.className.replace('language-', '');
+        let ticking = false;
+        
+        const updateProgress = () => {
+            const article = document.querySelector('#article-container');
+            if (!article) return;
+            
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            const progress = (scrollTop / documentHeight) * 100;
+            const clampedProgress = Math.min(Math.max(progress, 0), 100);
+            
+            progressBar.style.width = `${clampedProgress}%`;
+            
+            // 进度条透明度随滚动调整
+            if (clampedProgress < 1) {
+                progressBar.style.opacity = '0';
+            } else {
+                progressBar.style.opacity = '1';
+            }
+            
+            ticking = false;
+        };
+        
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateProgress);
+                ticking = true;
+            }
+        };
+        
+        window.addEventListener('scroll', onScroll);
+        updateProgress(); // 初始化进度
+    }
+    
+    // 8. 📋 代码复制功能增强
+    function enhanceCodeBlocks() {
+        // 等待页面加载完成后初始化
+        setTimeout(() => {
+            const codeBlocks = document.querySelectorAll('pre code, .highlight pre, figure.highlight pre');
+            
+            codeBlocks.forEach((block, index) => {
+                const pre = block.closest('pre') || block.closest('figure');
+                if (!pre || pre.querySelector('.code-copy-btn')) {
+                    return; // 避免重复添加
+                }
+                
+                createCopyButton(pre, block, index);
+            });
+        }, 1000);
+    }
+    
+    function createCopyButton(pre, codeBlock, index) {
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'code-copy-btn';
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+        copyBtn.title = '复制代码';
+        
+        // 复制功能
+        copyBtn.addEventListener('click', async () => {
+            try {
+                const code = getCodeText(codeBlock);
+                
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(code);
+                } else {
+                    // 降级方案
+                    fallbackCopyTextToClipboard(code);
+                }
+                
+                // 成功反馈
+                showCopySuccess(copyBtn);
+                
+            } catch (err) {
+                console.error('复制失败:', err);
+                showCopyError(copyBtn);
+            }
+        });
+        
+        // 设置pre为相对定位
+        pre.style.position = 'relative';
+        pre.appendChild(copyBtn);
+        
+        // 添加语言标签（如果有）
+        addLanguageLabel(pre, codeBlock);
+    }
+    
+    function getCodeText(codeBlock) {
+        // 处理不同类型的代码块
+        if (codeBlock.tagName === 'PRE') {
+            return codeBlock.textContent || codeBlock.innerText;
+        } else if (codeBlock.tagName === 'CODE') {
+            return codeBlock.textContent || codeBlock.innerText;
+        } else {
+            // 对于 figure.highlight 等复杂结构
+            const codeElement = codeBlock.querySelector('code') || codeBlock;
+            return codeElement.textContent || codeElement.innerText;
+        }
+    }
+    
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+    
+    function showCopySuccess(button) {
+        const originalHtml = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i>';
+        button.classList.add('success');
+        button.title = '复制成功！';
+        
+        setTimeout(() => {
+            button.innerHTML = originalHtml;
+            button.classList.remove('success');
+            button.title = '复制代码';
+        }, 2000);
+    }
+    
+    function showCopyError(button) {
+        const originalHtml = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-times"></i>';
+        button.classList.add('error');
+        button.title = '复制失败';
+        
+        setTimeout(() => {
+            button.innerHTML = originalHtml;
+            button.classList.remove('error');
+            button.title = '复制代码';
+        }, 2000);
+    }
+    
+    function addLanguageLabel(pre, codeBlock) {
+        const code = codeBlock.querySelector ? codeBlock.querySelector('code') : codeBlock;
+        if (code && code.className) {
+            const langMatch = code.className.match(/language-(\w+)/);
+            if (langMatch) {
+                const lang = langMatch[1];
                 const langLabel = document.createElement('div');
                 langLabel.textContent = lang.toUpperCase();
                 langLabel.style.cssText = `
                     position: absolute;
                     top: 10px;
-                    right: 10px;
+                    left: 12px;
                     background: rgba(255, 255, 255, 0.1);
                     padding: 2px 8px;
                     border-radius: 4px;
-                    font-size: 12px;
+                    font-size: 11px;
                     color: #fff;
+                    opacity: 0.7;
+                    font-family: 'Consolas', 'Monaco', monospace;
                 `;
-                block.style.position = 'relative';
-                block.appendChild(langLabel);
+                pre.appendChild(langLabel);
             }
-        });
+        }
     }
     
     // 8. 搜索功能增强
@@ -241,7 +541,8 @@ document.addEventListener('DOMContentLoaded', function() {
         addParallaxEffect();
         handleScrollAnimations();
         createStarfield();
-        enhanceCodeBlocks();
+        initReadingProgress(); // 新增：阅读进度条
+        enhanceCodeBlocks(); // 更新：代码块增强
         enhanceSearch();
         
         // 为标题添加发光效果
@@ -252,6 +553,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 初始化公告栏增强系统（延迟初始化以确保主题加载完成）
         initEnhancedAnnouncement();
+        
+        console.log('🎉 所有增强功能初始化完成！');
     }, 1000);
     
     // 9. 主题切换动画
