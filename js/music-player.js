@@ -6,9 +6,21 @@ class MusicPlayer {
         this.playlist = [
             {
                 title: "Lofi Study Beats",
-                artist: "Ambient",
-                src: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav", // Demo track
+                artist: "Chillhop Music",
+                src: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav",
                 cover: "/img/music-cover-1.jpg"
+            },
+            {
+                title: "Peaceful Piano",
+                artist: "Relaxing Music",
+                src: "https://www.soundjay.com/misc/sounds/clock-ticking-3.wav",
+                cover: "/img/music-cover-2.jpg"
+            },
+            {
+                title: "Nature Sounds",
+                artist: "Ambient Nature",
+                src: "https://www.soundjay.com/misc/sounds/fail-buzzer-02.wav",
+                cover: "/img/music-cover-3.jpg"
             }
         ];
         this.volume = 0.5;

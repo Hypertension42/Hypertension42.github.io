@@ -1985,6 +1985,43 @@ body {
     color: #60a5fa !important;
 }
 
+/* 修复移动端菜单标题对齐问题 */
+#mobile-menu .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+#mobile-menu .title i {
+    margin-right: 10px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#mobile-menu .title span {
+    vertical-align: middle;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 确保移动端菜单在所有页面类型中正确显示 */
+.article #mobile-menu .title,
+.post #mobile-menu .title,
+.page #mobile-menu .title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 50px !important;
+    line-height: 50px !important;
+}
+
 /* 修复移动端主题切换按钮显示问题 */
 #mobile-menu .item {
     display: flex;
@@ -2053,9 +2090,13 @@ body {
 
 /* 桌面端主题切换按钮修复 */
 #desktop-menu #theme-toggle {
-    display: inline-block;
+    display: flex !important;
+    align-items: center !important;
     vertical-align: middle;
     line-height: 50px;
+    height: 50px;
+    margin-left: 30px;
+    text-decoration: none;
 }
 
 #desktop-menu #theme-toggle .theme-icon {
@@ -2066,10 +2107,28 @@ body {
     vertical-align: middle;
     line-height: normal;
     display: inline-block;
+    margin-right: 8px;
+}
+
+#desktop-menu #theme-toggle span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }
 
 #desktop-menu #theme-toggle:hover .theme-icon {
     transform: rotate(180deg) scale(1.1);
+}
+
+/* 确保主题按钮在所有页面中对齐 */
+.article #desktop-menu #theme-toggle,
+.post #desktop-menu #theme-toggle,
+.page #desktop-menu #theme-toggle,
+body #desktop-menu #theme-toggle {
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+    line-height: 50px !important;
 }
 
 /* 移动端主题图标悬浮动画 */
@@ -2079,6 +2138,113 @@ body {
 
 [data-theme="dark"] #menu-curtain {
     background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ===== 移动端菜单响应式优化 ===== */
+
+/* 确保移动端菜单在小屏幕上正确显示 */
+@media screen and (max-width: 768px) {
+    #menu #mobile-menu {
+        display: block !important;
+    }
+    
+    #menu #desktop-menu {
+        display: none !important;
+    }
+    
+    #mobile-menu .title {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+    
+    #mobile-menu .title i {
+        margin-right: 8px !important;
+    }
+    
+    #mobile-menu .title span {
+        font-size: 14px !important;
+        display: inline-block !important;
+    }
+}
+
+/* 大屏幕上隐藏移动端菜单 */
+@media screen and (min-width: 769px) {
+    #menu #mobile-menu {
+        display: none !important;
+    }
+    
+    #menu #desktop-menu {
+        display: block !important;
+    }
+}
+
+/* ===== 桌面端菜单对齐修复 ===== */
+
+/* 确保桌面端菜单在所有页面类型中正确显示 */
+#menu #desktop-menu {
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#menu #desktop-menu .title {
+    color: #555;
+    display: inline-block;
+    margin-left: 60px;
+    margin-right: 5px;
+    line-height: 50px;
+    vertical-align: middle;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#menu #desktop-menu a {
+    color: #555;
+    display: inline-block;
+    margin-left: 30px;
+    line-height: 50px;
+    vertical-align: middle;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* 确保所有页面类型中桌面端菜单对齐 */
+.article #menu #desktop-menu,
+.post #menu #desktop-menu,
+.page #menu #desktop-menu,
+body #menu #desktop-menu {
+    height: 50px !important;
+    line-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.article #menu #desktop-menu .title,
+.post #menu #desktop-menu .title,
+.page #menu #desktop-menu .title,
+body #menu #desktop-menu .title {
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+    line-height: 50px !important;
+}
+
+.article #menu #desktop-menu a,
+.post #menu #desktop-menu a,
+.page #menu #desktop-menu a,
+body #menu #desktop-menu a {
+    display: flex !important;
+    align-items: center !important;
+    height: 50px !important;
+    line-height: 50px !important;
 }
 
 /* ===== Loading 动画暗色样式 ===== */
